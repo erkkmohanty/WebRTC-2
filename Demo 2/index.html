@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--/*
+ ps-webrtc-simplewebrtc.html
+ Author: Lisa Larson-Kelley (http://learnfromlisa.com)
+ WebRTC Fundamentals - Pluralsight.com
+ Version 1.0.0
+ -
+ Example of basic multiway conferencing with SimpleWebRTC framework
+ Adapted from SimpleWebRTC documentation 
+*/-->
+
+<html>
+    <head>
+        <title>WebRTC Fundamentals - SimpleWebRTC Chatroom Demo</title>
+          <link rel="stylesheet" href="style.css">
+           <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/simplewebrtc@3.0.2/out/simplewebrtc.bundle.js"></script>
+          <script src="multipeer.js"></script>
+          <script src="swrtc.js"></script>
+    </head>
+    <body>
+
+   <h1 id="title">Create your own private multi-party chatroom</h1>
+   <form id="createRoom">
+       <input  id="sessionInput">
+       <button type="submit">Create it!</button>
+   </form>
+    <button id="screenShareButton"></button><br>
+    <span id="subTitle">(https required for screensharing to work)</span>
+
+
+    <div id="roomLink" style="font-size:18px;color:#F00"></div>
+    <video id="localVideo" width="180" style="margin-top:15px;"></video>
+    <div id="remotes"></div>
+    </body>
+</html>

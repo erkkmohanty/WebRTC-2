@@ -1,0 +1,77 @@
+<!--
+ ps-webrtc-peerjs.html
+ Author: Lisa Larson-Kelley (http://learnfromlisa.com)
+ WebRTC Fundamentals - Pluralsight.com
+ Version 1.0.0
+ -
+ The simplest WebRTC 2-person chat, with manual signalling
+ Adapted from peerjs documentation
+-->
+
+<html>
+<head>
+  <title>WebRTC Fundamentals - PeerJS video chat with manual signalling example</title>
+  <link rel="stylesheet" href="style.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.9/peer.min.js"></script>
+
+  <script type="text/javascript" src="webrtc-peer.js"></script>
+  
+</head>
+
+<body>
+
+<div>
+<!-- Video area -->
+<div id="video-container">
+    Your Friend <video id="their-video" controls autoplay class="their-video"></video>
+    You<video id="my-video"  controls autoplay class="my-video"></video>
+</div>
+
+<!-- Steps -->
+<div>
+    <h2>Super-simple PeerJS Video Chat with Manual Signalling</h2>
+
+<!--Get local audio/video stream-->
+   <div id="step1">
+       <p>Please click 'allow' on the top of screen so we can access your webcam
+           and microphone for calls
+       </p>
+        <div id="step1-error">
+            <p>Failed to access the webcam and microphone. Make sure to run this demo
+                on an http server and click allow when asked for permission by the 
+                browser.
+            </p>
+            <a href="#" id="step1-retry" class="button">Try again</a>
+        </div>
+   </div>
+
+<!--Make calls to others-->
+<div id="step2">
+    <p>Your id: <span id="my-id">...</span></p>
+    <p>Share this id with otherss so they can call your.</p>
+    <p>
+        <span id="subhead">Make a call</span><br>
+        <input type="text" placeholder="Call user id..." id="callto-id">
+        <a href="#" id="make-call">Call</a>
+    </p>
+</div>
+
+<!--Call in progress-->
+<div id="step3">
+    <p>Currently in call wth <span id="their-id">...</span></p>
+    <p><a href="#" id="end-call">End call</a></p>
+</div>
+
+</div>
+
+<video width="320" height="240" controls muted>
+  <source src="https://youtu.be/ktBZ1UKKN28" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+</body>
+</html>
